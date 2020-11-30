@@ -2,7 +2,7 @@
 exports.up = function(knex) {
     return knex.schema
       .createTable('pokemon', pokemon => {
-          pokemon.integer('pokemon_id')
+          pokemon.integer('id')
                   .unique()
                   .notNullable();
           pokemon.text('pokemon_name')

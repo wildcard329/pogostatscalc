@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
         res.json(pokemon);
     })
     .catch(err => {
-        res.status(500).json({ msg: 'Could not find pokemon', err });
+        res.status(500).json(err.message);
     });
 });
 
@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
         }
     })
     .catch(err => {
-        res.status(500).json({ msg: 'Failed to get pokemon', err });
+        res.status(500).json(err.message);
     });
 });
 
@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
         res.status(201).json(pokemon);
     })
     .catch(err => {
-        res.status(500).json({ msg: 'Failed to add new entry.', err })
+        res.status(500).json(err.message)
     });
 });
 
@@ -55,7 +55,7 @@ router.put('/:id', (req, res) => {
         }
     })
     .catch(err => {
-        res.status(500).json({ msg: 'Failed to update pokemon', err })
+        res.status(500).json(err.message)
     })
 })
 
@@ -71,7 +71,7 @@ router.delete('/:id', (req, res) => {
         }
     })
     .catch(err => {
-        res.status(500).json({ msg: 'Failed to delete pokemon', err });
+        res.status(500).json(err.message);
     });
 });
 
